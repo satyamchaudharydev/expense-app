@@ -3,7 +3,8 @@ import { Pressable, View, StyleSheet } from "react-native";
 
 function CustomButton ({
     children,
-    onPress
+    onPress,
+    variant = "default"
 }) {
     return (
         <>
@@ -11,7 +12,7 @@ function CustomButton ({
             <Pressable
                 onPress={onPress}
             >
-                <View style={styles.button}>
+                <View style={[styles.button, styles[variant]]}>
                         {children}
                 </View>
             </Pressable>
@@ -26,7 +27,14 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         padding: 4
-    }
+    },
+
+    primary: {
+        backgroundColor: "black",
+        borderRadius: 5,
+        padding: 10
+    },
+    
 })
 
 export default CustomButton

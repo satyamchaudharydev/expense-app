@@ -18,7 +18,7 @@ function Expenses ({data, totalSubtext}){
                 total={totalExpensesAmount}
                 subtext={totalSubtext}
             />
-            <View style={{flex: 1, width: "100%"}}>
+            <View style={{flex: 1, width: "100%", gap: 10}}>
                 <FlatList data={data || []} renderItem={renderExpense} keyExtractor={
                     (item) => item.id 
                 } />

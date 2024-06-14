@@ -26,7 +26,7 @@ function ExpenseItem({title,amount, date,id}){
                         <Text>{convertDate(date)}</Text>
                     </View>
                     <View>
-                        <Text style={styles.amount}>${amount.toFixed()}</Text>
+                        <Text style={styles.amount}>${Number(amount).toFixed()}</Text>
                     </View>
                 </View>
             </Pressable>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         overflow: "hidden",
         shadowOffset: { width: 0, height: 1 },
         width: "100%",
-        padding: 16
+        padding: 16,
     },
     title:{
         fontWeight: "400",
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
         flex: 1,
         elevation: 1,
         borderRadius: 10,
-        
+        marginBottom: 10,
         backgroundColor: "white",
 
     }
